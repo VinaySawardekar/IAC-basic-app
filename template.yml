@@ -27,7 +27,7 @@ Resources:
       Runtime: python3.11
       Role: !GetAtt LambdaExecutionRole.Arn
       Code:
-        S3Bucket: iacapp
+        S3Bucket: iacapp-new
         S3Key: get_handler.zip
 
   PostLambdaFunction:
@@ -37,7 +37,7 @@ Resources:
       Runtime: python3.11
       Role: !GetAtt LambdaExecutionRole.Arn
       Code:
-        S3Bucket: iacapp
+        S3Bucket: iacapp-new
         S3Key: post_handler.zip
 
   APIGateway:

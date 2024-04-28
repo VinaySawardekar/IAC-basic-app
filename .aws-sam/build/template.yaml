@@ -28,7 +28,7 @@ Resources:
         - LambdaExecutionRole
         - Arn
       Code:
-        S3Bucket: iacapp
+        S3Bucket: iacapp-new
         S3Key: get_handler.zip
   PostLambdaFunction:
     Type: AWS::Lambda::Function
@@ -40,7 +40,7 @@ Resources:
         - LambdaExecutionRole
         - Arn
       Code:
-        S3Bucket: iacapp
+        S3Bucket: iacapp-new
         S3Key: post_handler.zip
   APIGateway:
     Type: AWS::ApiGateway::RestApi
@@ -110,7 +110,6 @@ Resources:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
             - dynamodb:Scan
-            - s3:*
             Resource:
               Fn::GetAtt:
               - DynamoDBTable
